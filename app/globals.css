@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Navy & gray church aesthetic */
+h1, h2, h3, h4 {
+  font-family: Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+/* Encircled buttons — text stays put, oval glows bright gold on hover (like nav) */
+.nav-btn,
+.btn-primary,
+.btn-accent,
+.btn-outline {
+  @apply rounded-full border-2 bg-transparent font-medium tracking-wide transition-[border-color,box-shadow] duration-300 inline-flex items-center justify-center;
+}
+
+.nav-btn:hover,
+.btn-primary:hover,
+.btn-accent:hover,
+.btn-outline:hover {
+  background-color: transparent;
+  border-color: #F5D77A;
+  box-shadow:
+    0 0 6px #FFD966,
+    0 0 14px rgba(255, 217, 102, 0.9),
+    0 0 28px rgba(255, 200, 60, 0.6),
+    0 0 44px rgba(255, 190, 40, 0.35);
+}
+
+.nav-btn {
+  @apply border-transparent text-white px-5 py-2 text-sm;
+}
+
+.nav-btn:hover {
+  color: #ffffff;
+}
+
+.btn-primary {
+  @apply px-8 py-3;
+  border-color: rgba(74, 111, 165, 0.7);
+  color: #2f4768;
+}
+
+.btn-primary:hover {
+  color: #3c5a85;
+}
+
+.btn-accent {
+  @apply px-8 py-3;
+  border-color: rgba(168, 138, 84, 0.8);
+  color: #8b7043;
+}
+
+.btn-accent:hover {
+  color: #8b7043;
+}
+
+.btn-outline {
+  @apply px-8 py-3;
+  border-color: rgba(74, 111, 165, 0.7);
+  color: #3c5a85;
+}
+
+.btn-outline:hover {
+  color: #4a6fa5;
+}
+
+/* Card styles - clean and warm */
+.card {
+  @apply bg-white rounded-xl shadow-sm border border-neutral-100 p-6 transition-all hover:shadow-md;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900;
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.95),
+    0 0 12px rgba(255, 255, 255, 0.55);
+}
+
+.page-eyebrow {
+  @apply uppercase text-xs tracking-[3px] text-primary-800;
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.98),
+    0 0 16px rgba(255, 255, 255, 0.75);
+}
+
+.page-title {
+  @apply font-semibold tracking-tight text-neutral-900;
+  text-shadow:
+    0 1px 3px rgba(255, 255, 255, 0.98),
+    0 0 22px rgba(255, 255, 255, 0.8);
+}
+
+.page-title--intro {
+  @apply page-title text-3xl md:text-4xl;
+}
+
+.page-title--hero {
+  @apply page-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-[0.98];
+}
+
+.page-description {
+  @apply text-lg text-neutral-800 max-w-2xl;
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.98),
+    0 0 14px rgba(255, 255, 255, 0.7);
+}
+
+/* Darken body copy over the background image */
+main {
+  color: #111827;
+}
+
+main .text-neutral-600 {
+  color: #1f2937;
+}
+
+main .text-neutral-500 {
+  color: #374151;
+}
+
+main .text-neutral-700 {
+  color: #1f2937;
+}
+
+main .prose {
+  color: #1f2937;
+}
+
+/* Fixed site-wide background image */
+.site-background {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.62), rgba(248, 249, 251, 0.72)),
+    url('/HFTFNcross.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Homepage hero — subtle dark overlay for white text */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 18, 24, 0.35) 0%,
+    rgba(15, 18, 24, 0.18) 45%,
+    rgba(15, 18, 24, 0.06) 100%
+  );
+}
+
+/* Form styling */
+.form-input {
+  @apply w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 bg-white transition-all;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-neutral-700 mb-1.5;
+}
+
+/* Navigation — oval + gold glow on hover only */
+.nav-link {
+  @apply rounded-full border-2 border-transparent bg-transparent text-white font-medium text-sm tracking-wide px-4 py-2 transition-[border-color,box-shadow,color] duration-300 inline-flex items-center justify-center;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #F5D77A;
+  box-shadow:
+    0 0 6px #FFD966,
+    0 0 14px rgba(255, 217, 102, 0.9),
+    0 0 28px rgba(255, 200, 60, 0.6),
+    0 0 44px rgba(255, 190, 40, 0.35);
+}
+
+.nav-link-active {
+  @apply text-white border-accent-500/60;
+}
+
+/* Site logo — gold glow follows the logo shape on hover */
+.site-logo {
+  @apply inline-flex items-center justify-center;
+}
+
+.site-logo img {
+  @apply transition-[filter] duration-300;
+}
+
+.site-logo:hover img {
+  filter:
+    drop-shadow(0 0 4px #ffd966)
+    drop-shadow(0 0 10px rgba(255, 217, 102, 0.9))
+    drop-shadow(0 0 22px rgba(255, 200, 60, 0.65))
+    drop-shadow(0 0 38px rgba(255, 190, 40, 0.4));
+}
+
+/* Ministry and Sermon cards */
+.ministry-card, .sermon-card, .event-card {
+  @apply bg-white rounded-xl overflow-hidden border border-neutral-100 shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+/* Gold divider or accent line */
+.accent-line {
+  @apply w-16 h-0.5 bg-primary-500 mx-auto;
+}
+
+/* Floating join button — fixed below navbar on the right */
+.join-community-btn {
+  @apply fixed right-4 md:right-6 top-[5.5rem] z-40 rounded-full border-2 border-transparent bg-site-nav text-white text-xs sm:text-sm font-medium tracking-wide px-4 py-2.5 shadow-lg transition-[border-color,box-shadow,transform] duration-300;
+}
+
+.join-community-btn:hover {
+  color: #ffffff;
+  border-color: #F5D77A;
+  box-shadow:
+    0 4px 14px rgba(15, 18, 24, 0.25),
+    0 0 6px #FFD966,
+    0 0 14px rgba(255, 217, 102, 0.9),
+    0 0 28px rgba(255, 200, 60, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.footer-link {
+  @apply text-neutral-300 hover:text-white transition-colors;
+}
+
+/* Service time banner */
+.service-banner {
+  @apply bg-primary-600 text-white;
+}
+
+/* Homepage Sunday invite — 5x the original py-3.5 / text-sm banner */
+.sunday-invite-banner {
+  @apply bg-site-nav text-white text-center tracking-wide font-semibold leading-[1.1] flex flex-col items-center;
+  font-size: 4.375rem;
+  padding: 4.375rem 2rem;
+}
+
+.sunday-invite-banner__address {
+  @apply inline-flex items-center gap-2 mt-6 font-medium text-neutral-300 hover:text-white transition-colors;
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title,
+  .page-title--intro {
+    @apply text-2xl;
+  }
+
+  .sunday-invite-banner {
+    font-size: 2.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .sunday-invite-banner__address {
+    font-size: 1.125rem;
+    margin-top: 1.25rem;
+  }
+}
